@@ -8,6 +8,17 @@ class ClassRoom
     end
 end
 
+describe 'Tags' do
+    it 'slow tags', slow: true do
+        sleep(10)
+        puts 'slow tests!'
+    end
+
+    it 'fast tags', fast: true do
+        puts 'fast tests!'
+    end
+end
+
 describe 'Hooks' do
     before(:each) do
         puts 'runs before each it'
