@@ -144,3 +144,15 @@ describe 'HomeController' do
         end
     end
 end
+
+describe 'Meta Data', foo: 1 do
+    context 'when tested', boo: 2 do
+        it 'can access the describe' do | example |
+            expect(example.metadata[:foo]).to eq 1
+        end
+
+        it 'can access the context' do | example |
+            expect(example.metadata[:boo]).to eq 2
+        end
+    end
+end
