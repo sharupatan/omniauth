@@ -8,6 +8,32 @@ class ClassRoom
     end
 end
 
+describe 'Hooks' do
+    before(:each) do
+        puts 'runs before each it'
+    end
+
+    after(:each) do
+        puts 'runs after each it'
+    end
+
+    it 'first' do
+        puts 'first it'
+    end
+
+    it 'second' do
+        puts 'second it'
+    end
+
+    before(:all) do
+        puts 'runs before all'
+    end
+
+    after(:all) do
+        puts 'runs after all'
+    end
+end
+
 describe ClassRoom do
     context 'when testing this class,' do
         it 'doubles' do
