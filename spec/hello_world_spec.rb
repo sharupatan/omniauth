@@ -1,19 +1,30 @@
-require './app/controllers/home_controller'
+class ClassRoom
+    def initialize(students)
+        @students = students
+    end
 
-describe HomeController do
+    def list_student_names
+        @students.map(&:name).join(',')
+    end
+end
+
+describe ClassRoom do
+    context 'when testing this class,' do
+        it 'doubles' do
+            student1 = double('student')
+            student2 = double('student')
+
+            allow(student1).to receive(:name) {'Sharu'}
+            allow(student2).to receive(:name) {'Khan'}
+
+            cr = ClassRoom.new [student1, student2]
+            expect(cr.list_student_names).to eq('Sharu,Khan')
+        end
+    end
+end
+
+describe 'HomeController' do
     context "when testing this class," do
-        it "should say 'in home' when called index" do
-            hw = HomeController.new
-            msg = hw.index
-            expect(msg).to eql "in home"
-        end
-
-        it "should not say 'in home' when called index" do
-            hw = HomeController.new
-            msg = hw.index
-            expect(msg).not_to eql "in home!"
-        end
-
         it "test cases" do
             a = 'test'
             b = a
