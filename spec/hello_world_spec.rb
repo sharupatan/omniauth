@@ -8,9 +8,23 @@ class ClassRoom
     end
 end
 
+class Person
+    attr_reader :firstname, :lastname
+
+    def initialize(firstname, lastname)
+        @firstname = firstname
+        @lastname = lastname
+    end
+end
+
+describe Person.new 'sharu', 'khan' do
+    it { is_expected.to have_attributes(firstname: 'sharu') }
+    it { is_expected.to have_attributes(lastname: 'khan') }
+end
+
 describe 'Tags' do
     it 'slow tags', slow: true do
-        sleep(10)
+        sleep(1)
         puts 'slow tests!'
     end
 
