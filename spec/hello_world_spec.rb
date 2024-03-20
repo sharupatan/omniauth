@@ -59,7 +59,7 @@ end
 
 describe 'Tags' do
     it 'slow tags', slow: true do
-        sleep(1)
+        # sleep(1)
         puts 'slow tests!'
     end
 
