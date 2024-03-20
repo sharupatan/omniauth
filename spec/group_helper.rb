@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Group, type: :model, cnt: true do
+describe Group, type: :model do
     let(:group) { FactoryBot.build(:group) }
     let(:leader) { FactoryBot.build(:leader) }
     
