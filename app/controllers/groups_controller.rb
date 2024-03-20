@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
     end
 
     def create
-        @group = group.new group_params
+        @group = Group.new group_params
         if @group.save
             flash[:notice] = 'Group has created successfully!'
             redirect_to groups_path

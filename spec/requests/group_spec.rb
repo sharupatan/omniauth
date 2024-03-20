@@ -19,7 +19,7 @@ describe 'Groups', type: :request, cnt: true do
         it 'should create a group with valid attributes' do
             post '/groups', params: {group: FactoryBot.attributes_for(:group)}
             expect(response).to redirect_to groups_path
-            expect(flash[:notice]).to eq 'Group has created successfully'
+            expect(flash[:notice]).to eq 'Group has created successfully!'
         end
     end
 end
